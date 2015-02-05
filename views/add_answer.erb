@@ -1,0 +1,25 @@
+<h1>Add multiple-choice answers to your question</h1>
+<h3>Your question is: </h3><h4><%= @question.question %></h4>
+
+<form action= "/questions/<%=@question.id %>" method = "post">
+  <label for="answer">Answer</label>
+  <input id="answer" name="answer" type="text">
+  <label for="true">Correct </label>
+  <input id="true" name="correct" type="radio" value="true">
+  <label for="false"> Incorrect</label>
+  <input id="false" name="correct" type="radio" value="false">
+  <button type="submit" class="btn btn-success btn-sm">Add</button>
+</form>
+<br>
+<br>
+<% if @answers.any? %>
+<p>Here are your currect answers:<ul>
+  <% @answers.each do |answer| %>
+  <li><%= answer.answer %>(<b><%= answer.correct %></b>)</li>
+  <% end %>
+</ul>
+<% else %>
+<p>There are no answers for this question yet!</p>
+<% end %>
+
+<a href= "/quizzes/<%=@question.quiz_id %>">Finished?  Add another question</a>

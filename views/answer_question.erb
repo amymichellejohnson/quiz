@@ -1,0 +1,19 @@
+<h1><%= @quiz.name %> Quiz </h1>
+<% if @questions.any? %>
+  <%= @question %>
+  <form action="questions/<%= @question.id %>" method="post">
+    <input type="hidden" name="_method" value="patch">
+      <%= @question.question %>
+        <% @answers.each do |answer| %>
+          <div class="radio">
+            <label>
+            <input required name="answer_id" type="radio" value="<%= answer.id %>"><%=answer.answer %>
+            </label>
+          </div>
+        <% end %>
+        <button type="submit" class="btn">Submit</button>
+  </form>
+
+<% else %>
+    <p>This quiz does not have any questions at the moment!</p>
+<% end %>

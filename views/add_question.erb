@@ -1,0 +1,23 @@
+<h1>Add a question to the <%=@quiz.name %> quiz</h1>
+
+<form action="/quizzes/<%= @quiz.id%>" method="post">
+  <label for="question">Question: </label>
+  <input id="question" name="question" type="text">
+  <button type="submit" class="btn btn-success">Add</button>
+</form>
+
+<br>
+<br>
+
+<% if @questions.any? %>
+  <p>Click on a question to add possible answers</p>
+  <ol>
+    <% @questions.each do |question| %>
+      <li><a href = "/questions/<%=question.id %>"><%= question.question %></li>
+      <% end %>
+    </ol>
+    <% else %>
+    <p>There are no questions for this quiz yet!</p>
+    <% end %>
+
+<a href = "/">Add/choose another quiz</a>

@@ -1,0 +1,33 @@
+<h1>Make a quiz:</h1>
+
+<form action="/" method="post">
+  <label for="name">Name your quiz: </label>
+  <input id="name" name="name" type="text">
+  <button type="submit" class="btn btn-success">Add</button>
+</form>
+
+<% if @quizzes.any? %>
+  <p>Click on a quiz to add questions and responses</p>
+  <ul>
+  <% @quizzes.each do |quiz| %>
+    <li><a href="quizzes/<%= quiz.id %>"><%= quiz.name %></a></li>
+  <% end %>
+  </ul>
+<% else %>
+  <p>There are no quizzes in the database yet!</p>
+<% end %>
+
+<br>
+<br>
+
+<h1>Take a quiz:</h1>
+<% if @quizzes.any? %>
+  <p>Click on a quiz to test your knowledge</p>
+  <ul>
+  <% @quizzes.each do |quiz| %>
+      <li><a href="take_quizzes/<%= quiz.id %>"><%=quiz.name %></a></li>
+  <% end %>
+  </ul>
+<% else %>
+  <p>There are no quizzes in the database yet!</p>
+<% end %>
