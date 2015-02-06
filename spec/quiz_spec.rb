@@ -12,6 +12,7 @@ describe Quiz do
   it "capitalizes the first letter of the quiz name" do
     quiz = Quiz.create(name: "biology")
     expect(quiz.name).to eq("Biology")
+  
   end
 
 end

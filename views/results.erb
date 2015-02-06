@@ -1,0 +1,25 @@
+<h1>These are your results</h1>
+
+<% question_count = 0 %>
+<% true_count = 0 %>
+<% @questions.each do |question| %>
+  <% question_count = question_count + 1 %>
+  <b><%= question.question %></b>
+  <% question.answers.each do |answer| %>
+    <% if answer.chosen %>
+      <p>Your answer:<%= answer.answer %>  <b><%=answer.correct %></b></p>
+      <% if answer.correct == true %>
+        <% true_count = true_count + 1 %>
+        <% end %>
+    <% end %>
+  <% end %>
+<% end %>
+
+
+
+<h3>Your score is: <%= true_count %>/<%=question_count %></h3>
+<h3>Your score is: <%= 100*true_count/question_count %>%</h3>
+<form action = '/finished' method = "post">
+  <input name = "_method" type="hidden" value= "patch">
+  <button type="submit">Take another quiz</button>
+</form>

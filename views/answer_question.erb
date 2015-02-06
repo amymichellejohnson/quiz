@@ -1,7 +1,7 @@
 <h1><%= @quiz.name %> Quiz </h1>
 <% if @questions.any? %>
-  <%= @question %>
-  <form action="questions/<%= @question.id %>" method="post">
+
+  <form action="/take_quizzes/questions/<%= @question.id %>" method="post">
     <input type="hidden" name="_method" value="patch">
       <%= @question.question %>
         <% @answers.each do |answer| %>
@@ -15,5 +15,6 @@
   </form>
 
 <% else %>
-    <p>This quiz does not have any questions at the moment!</p>
+
+<p>This quiz does not have any questions at the moment!</p>
 <% end %>
