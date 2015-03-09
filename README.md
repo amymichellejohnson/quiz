@@ -1,27 +1,83 @@
-# quiz
 ##Quiz App
-Allows user to create different quizes and to input questions into those quizes. Students can then take those quizes and receive a score for that quiz.Created using Ruby version 2.2.0.
+Allows a user to create different quizzes and to add multiple-choice questions to those quizes. Students can then take those quizes and receive a score for that quiz.
 
-##Project Setup
-Run the following in the project folder using Terminal:
+REQUIREMENTS
+------------
+Ruby v 2.2.0
 
-1. `gem install bundler`
-2. `bundle`
-3. `ruby app.rb`
+postgreSQL 9.4.0
 
-4. Go to https://localhost:4567 in your web browser to view app.
 
-##Tests
+INSTALLATION
+------------
+Run the following command to start the postgreSQL server:
+```
+$ postgres
+```
 
-Tests for ruby methods can be run using the rspec gem. Run the following in the project folder using terminal:
+Run the following command to access psql:
+```
+$ psql
+```
 
-1. `gem install rspec`
-2. `rspec`
+Run the following command to create the databases:
+```
+$ rake db:create
+```
 
-##Motivation
+Run the following command to populate the databases:
+```
+$ rake db:migrate
+```
 
-To practice creating multiple Ruby classes and to practice using an instance of one class in the method of another class. To use the defined classes in the sinatra app.
+Run the following command to copy migrations to the test database:
+```
+$ rake db:test:prepare
+```
 
-##License
+Run the following command to install rspec:
+```
+$ gem install rspec
+```
 
-MIT License. Copyright 2015. Created by Amy Johnson
+Run the following command to use rspec:
+```
+$ rspec
+```
+
+Run the following command to install bundler:
+```
+$ gem install bundler
+```
+
+Run the following command to install all required gems:
+```
+$ bundle
+```
+
+Run the following command to start the Sinatra server:
+```
+$ ruby app.rb
+```
+
+
+KNOWN BUGS
+---------
+No known bugs at this time.
+
+AUTHOR
+-------
+Amy Michelle Johnson
+
+amy.johnson.michelle@gmail.com
+
+LICENSE
+-------
+
+Copyright (c) 2015  Amy Michelle Johnson
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
