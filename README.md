@@ -1,5 +1,5 @@
 ##Quiz App
-Allows a user to create different quizzes and to add multiple-choice questions to those quizes. Students can then take those quizes and receive a score for that quiz.
+Allows a user to create different quizzes and to add multiple-choice questions to those quizzes. Students can then take those quizzes and receive a score for that quiz.
 
 REQUIREMENTS
 ------------
